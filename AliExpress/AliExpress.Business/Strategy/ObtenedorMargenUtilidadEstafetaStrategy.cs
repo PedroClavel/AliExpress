@@ -1,0 +1,35 @@
+﻿using AliExpress.Interfaces.Business.Strategy;
+using System;
+
+namespace AliExpress.Business.Strategy
+{
+    public class ObtenedorMargenUtilidadEstafetaStrategy : IObtenedorMargenUtilidadPaqueteria
+    {
+        /// <summary>
+        /// Método para obtener el margen de utilidad de la paquetería con base a la fecha en la que se realizó el pedido.
+        /// </summary>
+        /// <param name="dtFechaPedido">Fecha del pedido.</param>
+        /// <returns>Retorna el margen de utilidad con base a la fecha del pedido.</returns>
+        public int ObtenerMargenUtilidad(DateTime dtFechaPedido)
+        {
+            int iPorcentaje = 0;
+            var iMes = dtFechaPedido.Month;
+            var iDia = dtFechaPedido.Day;
+
+            if (iMes == 2 && iDia <= 14)
+            {
+                iPorcentaje = 10;
+            }
+            else if(iMes == 12)
+            {
+                iPorcentaje = 50;
+            }
+            else
+            {
+                iPorcentaje = 45;
+            }
+
+            return iPorcentaje;
+        }
+    }
+}
