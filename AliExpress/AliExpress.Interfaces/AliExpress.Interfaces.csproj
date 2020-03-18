@@ -51,6 +51,7 @@
     <Compile Include="Business\Factory\IObtenedorInstanciaCalculoCostoEnvioFactory.cs" />
     <Compile Include="Business\Factory\IObtenedorInstanciaMargenUtilidadFactory.cs" />
     <Compile Include="Business\Factory\IObtenedorInstanciaTiempoTrasladoMedioTransporteFactory.cs" />
+    <Compile Include="Business\ICalculadorCostoServicio.cs" />
     <Compile Include="Business\IObtenedorEstacionAnio.cs" />
     <Compile Include="Business\IObtenedorMediosTransporteService.cs" />
     <Compile Include="Business\IObtenedorTipoPaqueteriaService.cs" />

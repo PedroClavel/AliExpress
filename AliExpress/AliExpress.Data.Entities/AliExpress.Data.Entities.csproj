@@ -45,7 +45,6 @@
     <Compile Include="Enumeradores\eEstacionesAnio.cs" />
     <Compile Include="Enumeradores\eMediosTransporte.cs" />
     <Compile Include="Enumeradores\ePaqueteria.cs" />
-    <Compile Include="Enumeradores\eTipoConfiguracionEstacionAnio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

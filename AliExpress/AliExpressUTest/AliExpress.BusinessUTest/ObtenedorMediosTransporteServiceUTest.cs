@@ -1,7 +1,6 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AliExpress.Business;
+using AliExpress.Data.Entities.Enumeradores;
 
 namespace AliExpress.BusinessUTest
 {
@@ -11,59 +10,46 @@ namespace AliExpress.BusinessUTest
     [TestClass]
     public class ObtenedorMediosTransporteServiceUTest
     {
-        public ObtenedorMediosTransporteServiceUTest()
+        [TestMethod]
+        public void ObtenerMedioTransporte_TransporteMaritimo_RetornaTipoEnumeradorMaritimo()
         {
-            //
-            // TODO: Agregar aquí la lógica del constructor
-            //
+            //Arrange.
+            var SUT = new ObtenedorMediosTransporteService();
+            var cMedioTransporte = "marítimo";
+
+            //Act.
+            var eMedioTransporte = SUT.ObtenerMedioTransporte(cMedioTransporte);
+
+            //Assert.
+            Assert.AreEqual(eMediosTransporte.Maritimo, eMedioTransporte);
         }
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Obtiene o establece el contexto de las pruebas que proporciona
-        ///información y funcionalidad para la serie de pruebas actual.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
-        }
-
-        #region Atributos de prueba adicionales
-        //
-        // Puede usar los siguientes atributos adicionales conforme escribe las pruebas:
-        //
-        // Use ClassInitialize para ejecutar el código antes de ejecutar la primera prueba en la clase
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup para ejecutar el código una vez ejecutadas todas las pruebas en una clase
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Usar TestInitialize para ejecutar el código antes de ejecutar cada prueba 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup para ejecutar el código una vez ejecutadas todas las pruebas
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
 
         [TestMethod]
-        public void TestMethod1()
+        public void ObtenerMedioTransporte_TransporteTerrestre_RetornaTipoEnumeradorTerrestre()
         {
-            //
-            // TODO: Agregar aquí la lógica de las pruebas
-            //
+            //Arrange.
+            var SUT = new ObtenedorMediosTransporteService();
+            var cMedioTransporte = "terrestre";
+
+            //Act.
+            var eMedioTransporte = SUT.ObtenerMedioTransporte(cMedioTransporte);
+
+            //Assert.
+            Assert.AreEqual(eMediosTransporte.Terrestre, eMedioTransporte);
+        }
+
+        [TestMethod]
+        public void ObtenerMedioTransporte_TransporteAereo_RetornaTipoEnumeradorAereo()
+        {
+            //Arrange.
+            var SUT = new ObtenedorMediosTransporteService();
+            var cMedioTransporte = "aereo";
+
+            //Act.
+            var eMedioTransporte = SUT.ObtenerMedioTransporte(cMedioTransporte);
+
+            //Assert.
+            Assert.AreEqual(eMediosTransporte.Aereo, eMedioTransporte);
         }
     }
 }

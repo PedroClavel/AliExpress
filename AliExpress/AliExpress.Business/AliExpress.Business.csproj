@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculadorCostoServicio.cs" />
     <Compile Include="ColorMensaje\ObtenedorColorMensaje.cs" />
     <Compile Include="Factory\ObtenedorInstanciaCalculoCostoEnvioFactory.cs" />
     <Compile Include="Factory\ObtenedorInstanciaMargenUtilidadFactory.cs" />
